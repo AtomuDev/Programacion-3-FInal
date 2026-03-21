@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Actividad Integradora HTML - Food Store - Panel de Administración">
+    <meta name="author" content="Abel Tomás">
+    <title>Panel de Administración</title>
+</head>
+<body>
+    <header>
+        <h1>Panel de Administración</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Volver a la Tienda</a></li>
+                <li><a href="#">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+        <h2>Gestión de Productos</h2>
+        <button type="button">+ Nuevo Producto</button>
+
+        <table border="1" cellspacing="0" cellpadding="5">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td><img src="assets/images/hamburguesa-triple.jpg" alt="Hamburguesa Triple" width="50"></td>
+                    <td>Hamburguesa Triple</td>
+                    <td>Hamburguesas</td>
+                    <td>$25000.00</td>
+                    <td>12</td>
+                    <td>
+                        <a href="#">Editar</a> | 
+                        <a href="#">Eliminar</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td><img src="assets/images/pizza-mozzarella.jpg" alt="Pizza Mozzarella" width="50"></td>
+                    <td>Pizza Mozzarella</td>
+                    <td>Pizzas</td>
+                    <td>$18000.00</td>
+                    <td>5</td>
+                    <td>
+                        <a href="#">Editar</a> | 
+                        <a href="#">Eliminar</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td><img src="assets/images/papas-cheddar.jpg" alt="Papas con Cheddar" width="50"></td>
+                    <td>Papas con Cheddar</td>
+                    <td>Papas Fritas</td>
+                    <td>$8000.00</td>
+                    <td>0</td>
+                    <td>
+                        <a href="#">Editar</a> | 
+                        <a href="#">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <details open>
+            <summary><h3>Agregar Producto Rápido</h3></summary>
+            <form method="post">
+                <fieldset>
+                    <label for="nombreProducto">
+                        Nombre del Producto: <br>
+                        <input type="text" name="nombreProducto" id="nombreProducto" placeholder="Ej: Lomito Completo">
+                    </label>
+                    <br><br>
+                    <label for="precioProducto">
+                        Precio: <br>
+                        <input type="number" name="precioProducto" id="precioProducto" placeholder="Ej: 8000.00" min="0">
+                    </label>
+                    <br><br>
+                    <label for="stockProducto">
+                        Stock inicial: <br>
+                        <input type="number" name="stockProducto" id="stockProducto" placeholder="Ej: 10" min="0">
+                    </label>
+                    <br><br>
+                    <label for="categoriaProducto">
+                        Categoría: <br>
+                        <select name="categoriaProducto" id="categoriaProducto">
+                            <option value="" selected disabled>Seleccionar una categoría...</option>
+                            <option value="hamburguesas">Hamburguesas</option>
+                            <option value="pizzas">Pizzas</option>
+                            <option value="papas-fritas">Papas Fritas</option>
+                        </select>
+                    </label>
+                    <br><br>
+                    <label for="descripcionProducto">
+                        Descripción: <br>
+                        <textarea name="descripcionProducto" id="descripcionProducto" placeholder="Ingresa los ingredientes..." rows="4" cols="50"></textarea>
+                    </label>
+                </fieldset>
+                <button type="submit">Guardar Producto</button>
+            </form>
+        </details>
+    </main>
+
+    <footer>
+        <p>Panel de Administración - Food Store v1.0</p>
+    </footer>
+</body>
+</html>
