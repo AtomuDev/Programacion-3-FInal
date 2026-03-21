@@ -1,0 +1,112 @@
+:root {
+    --color-primario: #ff6347;
+    --color-fondo: #f0f0f0;
+    --color-texto: #333;
+    --color-blanco: #fff;
+    --color-borde: #ddd;
+    --color-focus: #ff4500;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-fondo);
+    font-family:'Arial', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-blanco);
+}
+
+.login-form h1 {
+    margin-bottom: 10px;
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--color-primario);
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: normal;
+    color: var(--color-texto);
+}
+
+label {
+    margin: 5px 0px;
+    font-weight: bold;
+    color: var(--color-texto);
+}
+
+input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid var(--color-borde);
+    border-radius: 5px;
+    font-size: 14px;
+    color: var(--color-texto);
+    opacity: 0.9;
+}
+
+input:focus {
+    border-color: var(--color-focus);
+    outline: none;
+}
+
+button {
+    margin-top: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: none;
+    background-color: var(--color-primario);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--color-blanco);
+    outline: none;
+
+}
+
+button:hover {
+    background-color: var(--color-focus);
+    cursor: pointer;
+}
+
+.login-form p {
+    padding: 22px 0px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.register-link {
+    text-decoration: none;
+    color: var(--color-primario)
+}
+
+@media (min-width: 375px) {
+    .login-form {
+        width: 375px;
+    }
+}
