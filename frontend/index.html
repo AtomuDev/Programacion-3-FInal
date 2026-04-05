@@ -3,86 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Actividad Integradora HTML - Food Store">
+    <meta name="description" content="Trabajo Integrador Programación III - Food Store">
     <meta name="author" content="Abel Tomás">
-    <title>Food Store</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <title>Food Store - Catálogo</title>
 </head>
 <body id="top">
-    <header>
-        <h1>Food Store</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Mis Pedidos</a></li>
-                <li><a href="#">Carrito</a></li>
-                <li><a href="admin.html">Panel Admin</a></li>
-            </ul>
+    <!-- Encabezado -->
+    <header class="header">
+        <h1 class="header__title">Food Store</h1>
+        <nav class="header__nav">
+            <a href="#">Inicio</a>
+            <a href="#">Mis Pedidos</a>
+            <a href="#">Carrito</a>
+            <a href="admin.html">Panel Admin</a>
         </nav>
     </header>
 
-    <hr>
-
-    <aside>
-        <h2>Categorías</h2>
-        <ul>
-            <li><a href="#">Todas</a></li>
-            <li><a href="#">Hamburguesas</a></li>
-            <li><a href="#">Pizzas</a></li>
-            <li><a href="#">Papas Fritas</a></li>
-            <li><a href="#">Bebidas</a></li>
-        </ul>
+    <!-- Barra lateral -->
+    <aside class="categories">
+        <h2 class="categories__title">Categorías</h2>
+        <ul id="lista-categorias" class="categories__list"></ul>
     </aside>
 
-    <main>
-        <form method="post">
-            <label for="buscarProducto">Buscar productos:
-                <input type="text" name="buscarProducto" id="buscarProducto" placeholder="Ej: Hamburguesa doble">
-            </label>
+    <!-- Contenido principal -->
+    <main class="main">
+        <!-- Buscador -->
+        <form method="get" class="main__search-bar">
+            <input type="text" name="buscarProducto" placeholder="Buscar productos...">
             <button type="submit">Buscar</button>
         </form>
 
-        <br><br>
-
-        <section>
-            <h2>Productos Destacados</h2>
-            <article>
-                <img src="assets/images/hamburguesa-triple.jpg" alt="Hamburguesa Triple" loading="lazy" width="400">
-                <h3>Hamburguesa Triple</h3>
-                <p>Hamburguesa triple smash con mucho cheddar.</p>
-                <p>Precio: <strong>$25000.00</strong></p>
-                <button type="button">Ver Detalles</button>
-                <button type="button">Agregar al Carrito</button>
-            </article>
-
-            <br><br>
-
-            <article>
-                <img src="assets/images/pizza-mozzarella.jpg" alt="Pizza Mozzarella" loading="lazy" width="400">
-                <h3>Pizza Mozzarella</h3>
-                <p>Salsa de tomate y mozzarella abundante.</p>
-                <p>Precio: <strong>$18000.00</strong></p>
-                <button type="button">Ver Detalles</button>
-                <button type="button">Agregar al Carrito</button>
-            </article>
-
-            <br><br>
-
-            <article>
-                <img src="assets/images/papas-cheddar.jpg" alt="Papas con Cheddar" loading="lazy" width="400">
-                <h3>Papas con Cheddar</h3>
-                <p>Papas fritas con queso cheddar derretido.</p>
-                <p>Precio: <strong>$8000.00</strong></p>
-                <button type="button">Ver Detalles</button>
-                <button type="button">Agregar al Carrito</button>
-            </article>
-
-            <br><br>
-        </section>
+        <!-- Grilla de productos -->
+        <h2 class="main__title">Productos Destacados</h2>
+        <section id="contenedor-productos" class="main__products"></section>
     </main>
 
-    <hr>
-
-    <footer>
+    <!-- Pie de página -->
+    <footer class="footer">
         <p>&copy; 2026 Food Store. Todos los derechos reservados.</p>
         <a href="#top">Volver arriba</a>
 
@@ -90,5 +49,9 @@
             Contacto: <a href="mailto:info@foodstore.com">info@foodstore.com</a>
         </address>
     </footer>
+
+    <!-- Scripts -->
+     <script src="./js/data.js"></script>
+     <script src="./js/main.js"></script>
 </body>
 </html>
