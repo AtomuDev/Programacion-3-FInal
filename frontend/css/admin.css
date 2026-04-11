@@ -1,0 +1,353 @@
+/* ================ LAYOUT ================ */
+.admin-layout {
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "sidebar"
+        "main"
+        "footer";
+    font-family: var(--font-base);
+    background-color: var(--color-fondo);
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .admin-layout {
+        grid-template-columns: 250px 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "header  header"
+            "sidebar main"
+            "footer  footer";
+    }
+}
+
+
+/* ================ HEADER ================ */
+.admin-header {
+    grid-area: header;
+    color: var(--color-blanco);
+    background-color: var(--color-texto);
+}
+
+.admin-header__title {
+    font-family: var(--font-titulo);
+    font-size: var(--text-xl);
+    color: var(--color-blanco);
+}
+
+.admin-header__title span {
+    color: var(--color-primario);
+}
+
+.admin-header__nav {
+    display: flex;
+    gap: var(--espacio-md);
+}
+
+.admin-header__nav a {
+    font-size: var(--text-sm);
+    text-decoration: none;
+    color: var(--color-blanco);
+}
+
+.admin-header__nav a:hover {
+    color: var(--color-primario);
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .admin-header__title {
+        font-size: var(--text-lg);
+    }
+ 
+    .admin-header__nav {
+        gap: var(--espacio-lg);
+    }
+}
+
+
+/* ================ SIDEBAR ================ */
+.admin-sidebar {
+    grid-area: sidebar;
+    padding: var(--espacio-md);
+    background-color: var(--color-blanco);
+    box-shadow: var(--sombra-card);
+}
+
+.admin-sidebar__label {
+    margin-bottom: var(--espacio-sm);
+    padding-bottom: var(--espacio-sm);
+    border-bottom: 2px solid var(--color-primario);
+    font-size: var(--text-sm);
+    color: var(--color-texto-suave);
+}
+
+.admin-sidebar__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-sm);
+    list-style: none;
+}
+
+.admin-sidebar__link {
+    display: block;
+    padding: var(--espacio-sm) var(--espacio-md);
+    border-radius: var(--radio-sm);
+    font-size: var(--text-sm);
+    text-decoration: none;
+    color: var(--color-texto);
+}
+
+.admin-sidebar__link:hover {
+    color: var(--color-primario);
+    background-color: var(--color-fondo);
+}
+
+.admin-sidebar__link--active {
+    color: var(--color-blanco);
+    background-color: var(--color-primario);
+}
+
+.admin-sidebar__link--active:hover {
+    color: var(--color-blanco);
+    background-color: var(--color-focus);
+}
+
+/* El link "Ver Tienda" se muestra solo en desktop sidebar */
+.admin-sidebar__store-link {
+    display: none;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .admin-sidebar {
+        position: sticky;
+        top: var(--header-height);
+        align-self: start;
+        margin: var(--espacio-md);
+        border-radius: var(--radio-sm);
+    }
+
+    .admin-sidebar__store-link {
+        display: block;
+        margin-top: var(--espacio-lg);
+        padding: var(--espacio-md) var(--espacio-md) var(--espacio-sm) var(--espacio-md);
+        border-top: 1px solid var(--color-borde);
+        border-radius: var(--radio-sm);
+        font-size: var(--text-sm);
+        text-decoration: none;
+        color: var(--color-texto-suave);
+    }
+
+    .admin-sidebar__store-link:hover {
+        color: var(--color-primario);
+    }
+}
+
+
+/* ================ MAIN ================ */
+.admin-main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-md);
+    overflow-x: hidden;
+    margin-top: var(--espacio-md);
+    padding: 0 var(--espacio-md);
+    background-color: var(--color-fondo);
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .admin-main {
+        margin: var(--espacio-md) var(--espacio-sm);
+    }
+}
+
+
+/* ================ SECTION ================ */
+.admin-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-md);
+    padding: var(--espacio-md);
+    border-radius: var(--radio-md);
+    background-color: var(--color-blanco);
+    box-shadow: var(--sombra-card);
+}
+
+.admin-section__header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--espacio-sm);
+    padding-bottom: var(--espacio-sm);
+    border-bottom: 2px solid var(--color-primario);
+}
+
+.admin-section__title {
+    font-family: var(--font-titulo);
+    font-size: var(--text-lg);
+    color: var(--color-texto);
+}
+
+
+/* ================ TABLA ================ */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+}
+
+.admin-table thead {
+    color: var(--color-blanco);
+    background-color: var(--color-primario);
+}
+
+.admin-table th, .admin-table td {
+    vertical-align: middle;
+    padding: var(--espacio-sm) var(--espacio-md);
+    border-bottom: 1px solid var(--color-borde);
+    font-size: var(--text-xs);
+    text-align: left;
+}
+
+.admin-table tbody tr:hover {
+    background-color: var(--color-fondo);
+}
+
+.admin-table__img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: var(--radio-sm);
+}
+
+.admin-table__actions {
+    align-items: start;
+    white-space: nowrap;
+}
+
+.admin-table__stock--agotado {
+    color: var(--color-focus);
+}
+
+
+/* ================ BOTONES ================ */
+.btn {
+    display: inline-block;
+    padding: var(--espacio-sm) var(--espacio-md);
+    border: none;
+    border-radius: var(--radio-sm);
+    cursor: pointer;
+    font-family: var(--font-base);
+    font-size: var(--text-sm);
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn--primary {
+    color: var(--color-blanco);
+    background-color: var(--color-verde);
+}
+
+.btn--secondary {
+    border: 1px solid var(--color-primario);
+    color: var(--color-primario);
+    background-color: var(--color-blanco);
+}
+
+.btn--secondary:hover {
+    color: var(--color-blanco);
+    background-color: var(--color-primario);
+}
+
+.btn--danger {
+    border: 1px solid var(--color-focus);
+    color: var(--color-blanco);
+    background-color: var(--color-primario);
+}
+
+.btn--danger:hover {
+    color: var(--color-blanco);
+    background-color: var(--color-focus);
+}
+
+/* Tamaño de botones de acciones */
+.btn--sm {
+    padding: var(--espacio-sm);
+    font-size: var(--text-xs);
+}
+
+
+/* ================ FORMULARIO ================ */
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-md);
+}
+
+.admin-form__group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-sm);
+}
+
+/* Fila de dos columnas para campos cortos (precio + stock) */
+.admin-form__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacio-md);
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .admin-form__row {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.admin-form__label {
+    font-size: var(--text-sm);
+    color: var(--color-texto);
+}
+
+.admin-form__input,
+.admin-form__select,
+.admin-form__textarea {
+    padding: var(--espacio-md);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-sm);
+    font-family: var(--font-base);
+    font-size: var(--text-sm);
+    color: var(--color-texto);
+    background-color: var(--color-blanco);
+    outline: none;
+    width: 100%;
+}
+
+.admin-form__input:focus,
+.admin-form__select:focus,
+.admin-form__textarea:focus {
+    border-color: var(--color-primario);
+}
+
+.admin-form__textarea {
+    resize: vertical;
+    min-height: var(--espacio-elg);
+}
+
+
+/* ================ FOOTER ================ */
+.admin-footer {
+    grid-area: footer;
+}

@@ -3,123 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Actividad Integradora HTML - Food Store - Panel de Administración">
+    <meta name="description" content="Food Store - Panel de Administración">
     <meta name="author" content="Abel Tomás">
-    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <title>Panel de Administración - Food Store</title>
 </head>
-<body>
-    <header>
-        <h1>Panel de Administración</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Volver a la Tienda</a></li>
-                <li><a href="#">Cerrar Sesión</a></li>
-            </ul>
+<body class="admin-layout">
+
+    <!-- Header -->
+    <header class="admin-header">
+        <h1 class="admin-header__title">Food Store <span>Admin</span></h1>
+        <nav class="admin-header__nav">
+            <a href="index.html">Tienda</a>
+            <a href="#">Cerrar Sesión</a>
         </nav>
     </header>
 
-    <hr>
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <p class="admin-sidebar__label">Administración</p>
+        <nav class="admin-sidebar__nav">
+            <ul class="admin-sidebar__list">
+                <li><a href="#" class="admin-sidebar__link">Dashboard</a></li>
+                <li><a href="#" class="admin-sidebar__link admin-sidebar__link--active">Productos</a></li>
+                <li><a href="#" class="admin-sidebar__link">Categorías</a></li>
+                <li><a href="#" class="admin-sidebar__link">Pedidos</a></li>
+            </ul>
+        </nav>
+        <a href="index.html" class="admin-sidebar__store-link">← Ver Tienda</a>
+    </aside>
 
-    <main>
-        <h2>Gestión de Productos</h2>
-        <button type="button">+ Nuevo Producto</button>
+    <!-- Contenido principal -->
+    <main class="admin-main">
 
-        <table border="1" cellspacing="0" cellpadding="5">
-            <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Imagen</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Categoria</th>
-                    <th scope="col">Precio</th>
-                    <th scope="col">Stock</th>
-                    <th scope="col">Acciones</th>
-                </tr>
-            </thead>
+        <!-- Sección: tabla de productos -->
+        <section class="admin-section">
+            <div class="admin-section__header">
+                <h2 class="admin-section__title">Gestión de Productos</h2>
+                <button type="button" class="btn btn--primary">+ Nuevo Producto</button>
+            </div>
 
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td><img src="assets/images/hamburguesa-triple.jpg" alt="Hamburguesa Triple" width="50"></td>
-                    <td>Hamburguesa Triple</td>
-                    <td>Hamburguesas</td>
-                    <td>$25000.00</td>
-                    <td>12</td>
-                    <td>
-                        <a href="#">Editar</a> | 
-                        <a href="#">Eliminar</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td><img src="assets/images/pizza-mozzarella.jpg" alt="Pizza Mozzarella" width="50"></td>
-                    <td>Pizza Mozzarella</td>
-                    <td>Pizzas</td>
-                    <td>$18000.00</td>
-                    <td>5</td>
-                    <td>
-                        <a href="#">Editar</a> | 
-                        <a href="#">Eliminar</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td><img src="assets/images/papas-cheddar.jpg" alt="Papas con Cheddar" width="50"></td>
-                    <td>Papas con Cheddar</td>
-                    <td>Papas Fritas</td>
-                    <td>$8000.00</td>
-                    <td>0</td>
-                    <td>
-                        <a href="#">Editar</a> | 
-                        <a href="#">Eliminar</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+            <div class="table-wrapper">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Categoría</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td><img src="assets/images/hamburguesa-triple.jpg" alt="Hamburguesa Triple" class="admin-table__img"></td>
+                            <td>Hamburguesa Triple</td>
+                            <td>Hamburguesas</td>
+                            <td>$25000.00</td>
+                            <td>12</td>
+                            <td class="admin-table__actions">
+                                <button type="button" class="btn btn--secondary btn--sm">Editar</button>
+                                <button type="button" class="btn btn--danger btn--sm">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td><img src="assets/images/pizza-mozzarella.jpg" alt="Pizza Mozzarella" class="admin-table__img"></td>
+                            <td>Pizza Mozzarella</td>
+                            <td>Pizzas</td>
+                            <td>$18000.00</td>
+                            <td>5</td>
+                            <td class="admin-table__actions">
+                                <button type="button" class="btn btn--secondary btn--sm">Editar</button>
+                                <button type="button" class="btn btn--danger btn--sm">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td><img src="assets/images/papas-cheddar.jpg" alt="Papas con Cheddar" class="admin-table__img"></td>
+                            <td>Papas con Cheddar</td>
+                            <td>Papas Fritas</td>
+                            <td>$8000.00</td>
+                            <td class="admin-table__stock--agotado">0</td>
+                            <td class="admin-table__actions">
+                                <button type="button" class="btn btn--secondary btn--sm">Editar</button>
+                                <button type="button" class="btn btn--danger btn--sm">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-        <hr>
+        <!-- Sección: formulario -->
+        <section class="admin-section">
+            <div class="admin-section__header">
+                <h2 class="admin-section__title">Agregar Producto</h2>
+            </div>
 
-        <details open>
-            <summary><h3>Agregar Producto Rápido</h3></summary>
-            <form method="post">
-                <fieldset>
-                    <label for="nombreProducto">
-                        Nombre del Producto: <br>
-                        <input type="text" name="nombreProducto" id="nombreProducto" placeholder="Ej: Lomito Completo">
-                    </label>
-                    <br><br>
-                    <label for="precioProducto">
-                        Precio: <br>
-                        <input type="number" name="precioProducto" id="precioProducto" placeholder="Ej: 8000.00" min="0">
-                    </label>
-                    <br><br>
-                    <label for="stockProducto">
-                        Stock inicial: <br>
-                        <input type="number" name="stockProducto" id="stockProducto" placeholder="Ej: 10" min="0">
-                    </label>
-                    <br><br>
-                    <label for="categoriaProducto">
-                        Categoría: <br>
-                        <select name="categoriaProducto" id="categoriaProducto">
-                            <option value="" selected disabled>Seleccionar una categoría...</option>
-                            <option value="hamburguesas">Hamburguesas</option>
-                            <option value="pizzas">Pizzas</option>
-                            <option value="papas-fritas">Papas Fritas</option>
-                        </select>
-                    </label>
-                    <br><br>
-                    <label for="descripcionProducto">
-                        Descripción: <br>
-                        <textarea name="descripcionProducto" id="descripcionProducto" placeholder="Ingresa los ingredientes..." rows="4" cols="50"></textarea>
-                    </label>
-                </fieldset>
-                <button type="submit">Guardar Producto</button>
+            <form class="admin-form" method="post">
+                <div class="admin-form__group">
+                    <label class="admin-form__label" for="nombreProducto">Nombre del Producto</label>
+                    <input class="admin-form__input" type="text" name="nombreProducto" id="nombreProducto" placeholder="Ej: Lomito Completo">
+                </div>
+
+                <div class="admin-form__row">
+                    <div class="admin-form__group">
+                        <label class="admin-form__label" for="precioProducto">Precio</label>
+                        <input class="admin-form__input" type="number" name="precioProducto" id="precioProducto" placeholder="Ej: 8000.00" min="0">
+                    </div>
+                    <div class="admin-form__group">
+                        <label class="admin-form__label" for="stockProducto">Stock Inicial</label>
+                        <input class="admin-form__input" type="number" name="stockProducto" id="stockProducto" placeholder="Ej: 10" min="0">
+                    </div>
+                </div>
+
+                <div class="admin-form__group">
+                    <label class="admin-form__label" for="categoriaProducto">Categoría</label>
+                    <select class="admin-form__select" name="categoriaProducto" id="categoriaProducto">
+                        <option value="" selected disabled>Seleccionar una categoría...</option>
+                        <option value="hamburguesas">Hamburguesas</option>
+                        <option value="pizzas">Pizzas</option>
+                        <option value="papas-fritas">Papas Fritas</option>
+                    </select>
+                </div>
+
+                <div class="admin-form__group">
+                    <label class="admin-form__label" for="descripcionProducto">Descripción</label>
+                    <textarea class="admin-form__textarea" name="descripcionProducto" id="descripcionProducto" placeholder="Ingresá los ingredientes..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn--primary">Guardar Producto</button>
             </form>
-        </details>
+        </section>
+
     </main>
 
-    <footer>
-        <p>Panel de Administración - Food Store v1.0</p>
+    <!-- Footer -->
+    <footer class="admin-footer">
+        <p>Panel de Administración &mdash; Food Store v1.0</p>
     </footer>
+
 </body>
 </html>

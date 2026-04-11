@@ -1,0 +1,90 @@
+/* Variables */
+:root {
+    /* Colores */
+    --color-primario: #ff6347;
+    --color-fondo: #f0f0f0;
+    --color-texto: #333;
+    --color-texto-suave: #707070;
+    --color-blanco: #fff;
+    --color-borde: #ddd;
+    --color-focus: #ff4500;
+    --color-verde: #00b473;
+
+    /* Espacios */
+    --espacio-sm: 8px;
+    --espacio-md: 16px;
+    --espacio-lg: 32px;
+    --espacio-elg: 48px;
+
+    /* Fuentes */
+    --font-titulo: 'Poppins', sans-serif;
+    --font-base: 'Inter', sans-serif;
+
+    /* Tamaños de texto */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-md: 1rem;
+    --text-lg: 1.3rem;
+    --text-xl: 1.8rem;
+    --text-xxl: 2.3rem;
+
+    /* Border radius */
+    --radio-sm: 6px;
+    --radio-md: 8px;
+
+    /* Sombras */
+    --sombra-card: 0 2px 6px rgba(0,0,0,0.1);
+
+    /* Altura del header — usada para sticky de sidebar y categories */
+    --header-height: 79px;
+}
+
+/* Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ================ HEADER (base compartida) ================ */
+.header, .admin-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--espacio-sm);
+    padding: var(--espacio-md);
+}
+ 
+@media (min-width: 1024px) {
+    .header, .admin-header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: var(--espacio-md) var(--espacio-elg);
+    }
+}
+
+
+/* ================ FOOTER (base compartida) ================ */
+.footer, .admin-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--espacio-sm);
+    padding: var(--espacio-lg) var(--espacio-lg) var(--espacio-elg) var(--espacio-lg);
+    font-size: var(--text-xs);
+    color: var(--color-blanco);
+    background-color: var(--color-texto);
+    text-align: center;
+}
+ 
+@media (min-width: 1024px) {
+    .footer, .admin-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}

@@ -1,18 +1,3 @@
-:root {
-    --color-primario: #ff6347;
-    --color-fondo: #f0f0f0;
-    --color-texto: #333;
-    --color-blanco: #fff;
-    --color-borde: #ddd;
-    --color-focus: #ff4500;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     background-color: var(--color-fondo);
     font-family:'Arial', sans-serif;
