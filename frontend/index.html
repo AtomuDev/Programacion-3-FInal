@@ -11,44 +11,52 @@
     <title>Food Store - Catálogo</title>
 </head>
 <body id="top">
+
     <!-- Header -->
     <header class="header">
-        <h1 class="header__title">Food Store</h1>
-        <nav class="header__nav">
-            <a href="#">Inicio</a>
-            <a href="#">Mis Pedidos</a>
-            <a href="#">Carrito</a>
-            <a href="admin.html">Panel Admin</a>
-        </nav>
+        <div class="container">
+            <h1 class="header__title">Food Store</h1>
+            <nav class="header__nav">
+                <a href="#">Inicio</a>
+                <a href="#">Mis Pedidos</a>
+                <a href="#">Carrito</a>
+                <a href="admin.html">Panel Admin</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Barra lateral -->
-    <aside class="categories">
-        <h2 class="categories__title">Categorías</h2>
-        <ul id="lista-categorias" class="categories__list"></ul>
-    </aside>
+    <!-- Layout: sidebar + main -->
+    <div class="layout">
 
-    <!-- Contenido principal -->
-    <main class="main">
-        <!-- Buscador -->
-        <form method="get" class="main__search-bar">
-            <input type="text" name="buscarProducto" placeholder="Buscar productos...">
-            <button type="submit">Buscar</button>
-        </form>
+        <!-- Barra lateral -->
+        <aside class="categories">
+            <h2 class="categories__title">Categorías</h2>
+            <ul id="lista-categorias" class="categories__list"></ul>
+        </aside>
 
-        <!-- Grilla de productos -->
-        <h2 class="main__title">Productos Destacados</h2>
-        <section id="contenedor-productos" class="main__products"></section>
-    </main>
+        <!-- Contenido principal -->
+        <main class="main">
+            <!-- Buscador -->
+            <form method="get" class="main__search-bar">
+                <input type="text" name="buscarProducto" placeholder="Buscar productos...">
+                <button type="submit">Buscar</button>
+            </form>
+ 
+            <!-- Grilla de productos -->
+            <h2 class="main__title">Productos Destacados</h2>
+            <section id="contenedor-productos" class="main__products"></section>
+        </main>
+    </div>
 
     <!-- Pie de página -->
     <footer class="footer">
-        <p>&copy; 2026 Food Store. Todos los derechos reservados.</p>
-        <a href="#top">Volver arriba</a>
-
-        <address>
-            Contacto: <a href="mailto:info@foodstore.com">info@foodstore.com</a>
-        </address>
+        <div class="container">
+            <p>&copy; 2026 Food Store. Todos los derechos reservados.</p>
+            <a href="#top">Volver arriba</a>
+            <address>
+                Contacto: <a href="mailto:info@foodstore.com">info@foodstore.com</a>
+            </address>
+        </div>
     </footer>
 
     <!-- Scripts -->

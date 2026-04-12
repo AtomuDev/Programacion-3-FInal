@@ -10,143 +10,152 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <title>Panel de Administración - Food Store</title>
 </head>
-<body class="admin-layout">
+<body class="admin-body">
 
     <!-- Header -->
     <header class="admin-header">
-        <h1 class="admin-header__title">Food Store <span>Admin</span></h1>
-        <nav class="admin-header__nav">
-            <a href="index.html">Tienda</a>
-            <a href="#">Cerrar Sesión</a>
-        </nav>
+        <div class="container">
+            <h1 class="admin-header__title">Food Store <span>Admin</span></h1>
+            <nav class="admin-header__nav">
+                <a href="index.html">Tienda</a>
+                <a href="#">Cerrar Sesión</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Sidebar -->
-    <aside class="admin-sidebar">
-        <p class="admin-sidebar__label">Administración</p>
-        <nav class="admin-sidebar__nav">
-            <ul class="admin-sidebar__list">
-                <li><a href="#" class="admin-sidebar__link">Dashboard</a></li>
-                <li><a href="#" class="admin-sidebar__link admin-sidebar__link--active">Productos</a></li>
-                <li><a href="#" class="admin-sidebar__link">Categorías</a></li>
-                <li><a href="#" class="admin-sidebar__link">Pedidos</a></li>
-            </ul>
-        </nav>
-        <a href="index.html" class="admin-sidebar__store-link">← Ver Tienda</a>
-    </aside>
+    <!-- Layout: sidebar + main -->
+    <div class="layout">
 
-    <!-- Contenido principal -->
-    <main class="admin-main">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <p class="admin-sidebar__label">Administración</p>
+            <nav class="admin-sidebar__nav">
+                <ul class="admin-sidebar__list">
+                    <li><a href="#" class="admin-sidebar__link">Dashboard</a></li>
+                    <li><a href="#" class="admin-sidebar__link admin-sidebar__link--active">Productos</a></li>
+                    <li><a href="#" class="admin-sidebar__link">Categorías</a></li>
+                    <li><a href="#" class="admin-sidebar__link">Pedidos</a></li>
+                </ul>
+            </nav>
+            <a href="index.html" class="admin-sidebar__store-link">← Ver Tienda</a>
+        </aside>
 
-        <!-- Sección: tabla de productos -->
-        <section class="admin-section">
-            <div class="admin-section__header">
-                <h2 class="admin-section__title">Gestión de Productos</h2>
-                <button type="button" class="btn btn--primary">+ Nuevo Producto</button>
-            </div>
+        <!-- Contenido principal -->
+        <main class="admin-main">
 
-            <div class="table-wrapper">
-                <table class="admin-table">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Imagen</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Categoría</th>
-                            <th scope="col">Precio</th>
-                            <th scope="col">Stock</th>
-                            <th scope="col">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td><img src="assets/images/hamburguesa-triple.jpg" alt="Hamburguesa Triple" class="admin-table__img"></td>
-                            <td>Hamburguesa Triple</td>
-                            <td>Hamburguesas</td>
-                            <td>$25000.00</td>
-                            <td>12</td>
-                            <td class="admin-table__actions">
-                                <button type="button" class="btn btn--secondary btn--sm">Editar</button>
-                                <button type="button" class="btn btn--danger btn--sm">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td><img src="assets/images/pizza-mozzarella.jpg" alt="Pizza Mozzarella" class="admin-table__img"></td>
-                            <td>Pizza Mozzarella</td>
-                            <td>Pizzas</td>
-                            <td>$18000.00</td>
-                            <td>5</td>
-                            <td class="admin-table__actions">
-                                <button type="button" class="btn btn--secondary btn--sm">Editar</button>
-                                <button type="button" class="btn btn--danger btn--sm">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td><img src="assets/images/papas-cheddar.jpg" alt="Papas con Cheddar" class="admin-table__img"></td>
-                            <td>Papas con Cheddar</td>
-                            <td>Papas Fritas</td>
-                            <td>$8000.00</td>
-                            <td class="admin-table__stock--agotado">0</td>
-                            <td class="admin-table__actions">
-                                <button type="button" class="btn btn--secondary btn--sm">Editar</button>
-                                <button type="button" class="btn btn--danger btn--sm">Eliminar</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- Sección: formulario -->
-        <section class="admin-section">
-            <div class="admin-section__header">
-                <h2 class="admin-section__title">Agregar Producto</h2>
-            </div>
-
-            <form class="admin-form" method="post">
-                <div class="admin-form__group">
-                    <label class="admin-form__label" for="nombreProducto">Nombre del Producto</label>
-                    <input class="admin-form__input" type="text" name="nombreProducto" id="nombreProducto" placeholder="Ej: Lomito Completo">
+            <!-- Sección: tabla de productos -->
+            <section class="admin-section">
+                <div class="admin-section__header">
+                    <h2 class="admin-section__title">Gestión de Productos</h2>
+                    <button type="button" class="btn btn--primary">+ Nuevo Producto</button>
                 </div>
 
-                <div class="admin-form__row">
+                <div class="table-wrapper">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Imagen</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Categoría</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Stock</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td><img src="assets/images/hamburguesa-triple.jpg" alt="Hamburguesa Triple" class="admin-table__img"></td>
+                                <td>Hamburguesa Triple</td>
+                                <td>Hamburguesas</td>
+                                <td>$25000.00</td>
+                                <td>12</td>
+                                <td class="admin-table__actions">
+                                    <button type="button" class="btn btn--secondary btn--sm">Editar</button>
+                                    <button type="button" class="btn btn--danger btn--sm">Eliminar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td><img src="assets/images/pizza-mozzarella.jpg" alt="Pizza Mozzarella" class="admin-table__img"></td>
+                                <td>Pizza Mozzarella</td>
+                                <td>Pizzas</td>
+                                <td>$18000.00</td>
+                                <td>5</td>
+                                <td class="admin-table__actions">
+                                    <button type="button" class="btn btn--secondary btn--sm">Editar</button>
+                                    <button type="button" class="btn btn--danger btn--sm">Eliminar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td><img src="assets/images/papas-cheddar.jpg" alt="Papas con Cheddar" class="admin-table__img"></td>
+                                <td>Papas con Cheddar</td>
+                                <td>Papas Fritas</td>
+                                <td>$8000.00</td>
+                                <td class="admin-table__stock--agotado">0</td>
+                                <td class="admin-table__actions">
+                                    <button type="button" class="btn btn--secondary btn--sm">Editar</button>
+                                    <button type="button" class="btn btn--danger btn--sm">Eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Sección: formulario -->
+            <section class="admin-section">
+                <div class="admin-section__header">
+                    <h2 class="admin-section__title">Agregar Producto</h2>
+                </div>
+
+                <form class="admin-form" method="post">
                     <div class="admin-form__group">
-                        <label class="admin-form__label" for="precioProducto">Precio</label>
-                        <input class="admin-form__input" type="number" name="precioProducto" id="precioProducto" placeholder="Ej: 8000.00" min="0">
+                        <label class="admin-form__label" for="nombreProducto">Nombre del Producto</label>
+                        <input class="admin-form__input" type="text" name="nombreProducto" id="nombreProducto" placeholder="Ej: Lomito Completo">
                     </div>
+
+                    <div class="admin-form__row">
+                        <div class="admin-form__group">
+                            <label class="admin-form__label" for="precioProducto">Precio</label>
+                            <input class="admin-form__input" type="number" name="precioProducto" id="precioProducto" placeholder="Ej: 8000.00" min="0">
+                        </div>
+                        <div class="admin-form__group">
+                            <label class="admin-form__label" for="stockProducto">Stock Inicial</label>
+                            <input class="admin-form__input" type="number" name="stockProducto" id="stockProducto" placeholder="Ej: 10" min="0">
+                        </div>
+                    </div>
+
                     <div class="admin-form__group">
-                        <label class="admin-form__label" for="stockProducto">Stock Inicial</label>
-                        <input class="admin-form__input" type="number" name="stockProducto" id="stockProducto" placeholder="Ej: 10" min="0">
+                        <label class="admin-form__label" for="categoriaProducto">Categoría</label>
+                        <select class="admin-form__select" name="categoriaProducto" id="categoriaProducto">
+                            <option value="" selected disabled>Seleccionar una categoría...</option>
+                            <option value="hamburguesas">Hamburguesas</option>
+                            <option value="pizzas">Pizzas</option>
+                            <option value="papas-fritas">Papas Fritas</option>
+                        </select>
                     </div>
-                </div>
 
-                <div class="admin-form__group">
-                    <label class="admin-form__label" for="categoriaProducto">Categoría</label>
-                    <select class="admin-form__select" name="categoriaProducto" id="categoriaProducto">
-                        <option value="" selected disabled>Seleccionar una categoría...</option>
-                        <option value="hamburguesas">Hamburguesas</option>
-                        <option value="pizzas">Pizzas</option>
-                        <option value="papas-fritas">Papas Fritas</option>
-                    </select>
-                </div>
+                    <div class="admin-form__group">
+                        <label class="admin-form__label" for="descripcionProducto">Descripción</label>
+                        <textarea class="admin-form__textarea" name="descripcionProducto" id="descripcionProducto" placeholder="Ingresá los ingredientes..."></textarea>
+                    </div>
 
-                <div class="admin-form__group">
-                    <label class="admin-form__label" for="descripcionProducto">Descripción</label>
-                    <textarea class="admin-form__textarea" name="descripcionProducto" id="descripcionProducto" placeholder="Ingresá los ingredientes..."></textarea>
-                </div>
+                    <button type="submit" class="btn btn--primary">Guardar Producto</button>
+                </form>
+            </section>
 
-                <button type="submit" class="btn btn--primary">Guardar Producto</button>
-            </form>
-        </section>
+        </main>
 
-    </main>
+    </div>
 
     <!-- Footer -->
     <footer class="admin-footer">
-        <p>Panel de Administración &mdash; Food Store v1.0</p>
+        <div class="container">
+            <p>Panel de Administración &mdash; Food Store v1.0</p>
+        </div>
     </footer>
 
 </body>
