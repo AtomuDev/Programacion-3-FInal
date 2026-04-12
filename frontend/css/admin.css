@@ -1,35 +1,17 @@
-/* ================ LAYOUT ================ */
-.admin-layout {
-    display: grid;
+/* ================ BODY ================ */
+.admin-body {
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
-    grid-template-rows: auto auto 1fr auto;
-    grid-template-areas:
-        "header"
-        "sidebar"
-        "main"
-        "footer";
     font-family: var(--font-base);
     background-color: var(--color-fondo);
-}
-
-/* Desktop */
-@media (min-width: 1024px) {
-    .admin-layout {
-        grid-template-columns: 250px 1fr;
-        grid-template-rows: auto 1fr auto;
-        grid-template-areas:
-            "header  header"
-            "sidebar main"
-            "footer  footer";
-    }
 }
 
 
 /* ================ HEADER ================ */
 .admin-header {
-    grid-area: header;
-    color: var(--color-blanco);
     background-color: var(--color-texto);
+    color: var(--color-blanco);
 }
 
 .admin-header__title {
@@ -57,12 +39,11 @@
     color: var(--color-primario);
 }
 
-/* Desktop */
 @media (min-width: 1024px) {
     .admin-header__title {
         font-size: var(--text-lg);
     }
- 
+
     .admin-header__nav {
         gap: var(--espacio-lg);
     }
@@ -116,12 +97,10 @@
     background-color: var(--color-focus);
 }
 
-/* El link "Ver Tienda" se muestra solo en desktop sidebar */
 .admin-sidebar__store-link {
     display: none;
 }
 
-/* Desktop */
 @media (min-width: 1024px) {
     .admin-sidebar {
         position: sticky;
@@ -156,11 +135,10 @@
     gap: var(--espacio-md);
     overflow-x: hidden;
     margin-top: var(--espacio-md);
-    padding: 0 var(--espacio-md);
+    padding: 0 var(--espacio-md) var(--espacio-md) var(--espacio-md);
     background-color: var(--color-fondo);
 }
 
-/* Desktop */
 @media (min-width: 1024px) {
     .admin-main {
         margin: var(--espacio-md) var(--espacio-sm);
@@ -226,8 +204,8 @@
 
 .admin-table__img {
     display: block;
-    width: 48px;
-    height: 48px;
+    width: 120px;
+    height: 96px;
     object-fit: cover;
     border-radius: var(--radio-sm);
 }
@@ -282,7 +260,6 @@
     background-color: var(--color-focus);
 }
 
-/* Tamaño de botones de acciones */
 .btn--sm {
     padding: var(--espacio-sm);
     font-size: var(--text-xs);
@@ -302,14 +279,12 @@
     gap: var(--espacio-sm);
 }
 
-/* Fila de dos columnas para campos cortos (precio + stock) */
 .admin-form__row {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--espacio-md);
 }
 
-/* Desktop */
 @media (min-width: 1024px) {
     .admin-form__row {
         grid-template-columns: 1fr 1fr;
@@ -349,5 +324,5 @@
 
 /* ================ FOOTER ================ */
 .admin-footer {
-    grid-area: footer;
+    margin-top: auto;
 }
