@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Food Store - Panel de Administración">
     <meta name="author" content="Abel Tomás">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="../../../styles/base.css">
+    <link rel="stylesheet" href="../../../styles/components.css">
+    <link rel="stylesheet" href="./admin.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <title>Panel de Administración - Food Store</title>
 </head>
@@ -15,10 +16,12 @@
     <!-- Header -->
     <header class="admin-header">
         <div class="container">
-            <h1 class="admin-header__title">Food Store <span>Admin</span></h1>
+            <a href="/src/pages/admin/home/admin.html" class="admin-header__title-link">
+                <h1 class="admin-header__title">Food Store <span>Admin</span></h1>
+            </a>
             <nav class="admin-header__nav">
-                <a href="index.html">Tienda</a>
-                <a href="#">Cerrar Sesión</a>
+                <a href="/src/pages/store/home/home.html">Tienda</a>
+                <button type="button" id="logoutButton">Cerrar Sesión</button>
             </nav>
         </div>
     </header>
@@ -37,7 +40,6 @@
                     <li><a href="#" class="admin-sidebar__link">Pedidos</a></li>
                 </ul>
             </nav>
-            <a href="index.html" class="admin-sidebar__store-link">← Ver Tienda</a>
         </aside>
 
         <!-- Contenido principal -->
@@ -66,7 +68,7 @@
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td><img src="assets/images/hamburguesa-triple.jpg" alt="Hamburguesa Triple" class="admin-table__img"></td>
+                                <td><img src="../../../assets/images/hamburguesa-clasica.jpg" alt="Hamburguesa Triple" class="admin-table__img"></td>
                                 <td>Hamburguesa Triple</td>
                                 <td>Hamburguesas</td>
                                 <td>$25000.00</td>
@@ -78,7 +80,7 @@
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
-                                <td><img src="assets/images/pizza-mozzarella.jpg" alt="Pizza Mozzarella" class="admin-table__img"></td>
+                                <td><img src="../../../assets/images/pizza-mozzarella.jpg" alt="Pizza Mozzarella" class="admin-table__img"></td>
                                 <td>Pizza Mozzarella</td>
                                 <td>Pizzas</td>
                                 <td>$18000.00</td>
@@ -90,7 +92,7 @@
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
-                                <td><img src="assets/images/papas-cheddar.jpg" alt="Papas con Cheddar" class="admin-table__img"></td>
+                                <td><img src="../../../assets/images/papas-cheddar.jpg" alt="Papas con Cheddar" class="admin-table__img"></td>
                                 <td>Papas con Cheddar</td>
                                 <td>Papas Fritas</td>
                                 <td>$8000.00</td>
@@ -158,5 +160,8 @@
         </div>
     </footer>
 
+    <!-- Script -->
+    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="./admin.ts"></script>
 </body>
 </html>

@@ -2,65 +2,18 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Trabajo Integrador Programación III - Food Store">
-    <meta name="author" content="Abel Tomás">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <title>Food Store - Catálogo</title>
+    <meta http-equiv="refresh" content="0; url=/src/pages/auth/login/login.html">
 </head>
-<body id="top">
-
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <h1 class="header__title">Food Store</h1>
-            <nav class="header__nav">
-                <a href="#">Inicio</a>
-                <a href="#">Mis Pedidos</a>
-                <a href="#">Carrito</a>
-                <a href="admin.html">Panel Admin</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Layout: sidebar + main -->
-    <div class="layout">
-
-        <!-- Barra lateral -->
-        <aside class="categories">
-            <h2 class="categories__title">Categorías</h2>
-            <ul id="lista-categorias" class="categories__list"></ul>
-        </aside>
-
-        <!-- Contenido principal -->
-        <main class="main">
-            <!-- Buscador -->
-            <form method="get" class="main__search-bar">
-                <input type="text" name="buscarProducto" placeholder="Buscar productos...">
-                <button type="submit">Buscar</button>
-            </form>
- 
-            <!-- Grilla de productos -->
-            <h2 class="main__title">Productos Destacados</h2>
-            <section id="contenedor-productos" class="main__products"></section>
-        </main>
-    </div>
-
-    <!-- Pie de página -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Food Store. Todos los derechos reservados.</p>
-            <a href="#top">Volver arriba</a>
-            <address>
-                Contacto: <a href="mailto:info@foodstore.com">info@foodstore.com</a>
-            </address>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-     <script src="./js/data.js"></script>
-     <script src="./js/main.js"></script>
+<body>
 </body>
 </html>
+
+<!-- Cosas que faltan: 
+    - Registro: ver lo de rol, que sepa cuando se registra un admin o un cliente
+    - Diseño: definir los diseños del container y sus titulos, ya que ej en administración, el titulo "Gestión de productos" están dentro del cantainer blanco y en las otras vistas el título está fuera del container
+    - Estructura: asegurarse que no haya nada hardcodeado en los html (admin.html está hardcodeado, ver que hacer)
+    - Final: asegurarse que el enrutamiento y seguridad estén bien implementados, que no se pueda acceder a la vista de admin sin estar logeado como admin, que no se pueda acceder a la vista de home sin estar logeado, etc
+    - Final: agregar el README
+    - Final: asegurarse que todo el proyecto cumple con los requisitos del parcial y también del trabajo final
+    - Final: probar código en producción
+-->

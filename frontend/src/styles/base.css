@@ -1,4 +1,4 @@
-/* Variables */
+/* ================ VARIABLES GLOBALES ================ */
 :root {
     /* Colores */
     --color-primario: #ff6347;
@@ -9,8 +9,11 @@
     --color-borde: #ddd;
     --color-focus: #ff4500;
     --color-verde: #00b473;
+    --color-alerta: #fa8b2a;
+    --color-peligro: #bd1300;
 
     /* Espacios */
+    --espacio-xs: 4px;
     --espacio-sm: 8px;
     --espacio-md: 16px;
     --espacio-lg: 32px;
@@ -28,15 +31,32 @@
     --text-xl: 1.8rem;
     --text-xxl: 2.3rem;
 
+    /* Pesos de texto */
+    --font-weight-normal: 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
     /* Border radius */
     --radio-sm: 6px;
     --radio-md: 8px;
+    --radio-lg: 10px;
 
     /* Sombras */
     --sombra-card: 0 2px 6px rgba(0,0,0,0.1);
 
-    /* Altura del header — usada para sticky de sidebar y categories */
+    /* Transiciones */
+    --transition-fast: 0.15s;
+    --transition-base: 0.2s ease;
+
+    /* Opacidades */
+    --opacity-hover: 0.88;
+    --opacity-disabled: 0.3;
+
+    /* Altura del header */
     --header-height: 79px;
+
+    /* Ancho del sidebar */
+    --sidebar-width: 250px;
 
     /* Ancho máximo del contenido */
     --max-width: 1440px;
@@ -51,7 +71,6 @@
 
 
 /* ================ CONTAINER ================ */
-/* Limita y centra el contenido interno */
 .container {
     width: 100%;
     max-width: var(--max-width);
@@ -67,7 +86,6 @@
 
 
 /* ================ LAYOUT (sidebar + main) ================ */
-/* Compartido entre index y admin */
 .layout {
     display: grid;
     width: 100%;
@@ -82,63 +100,7 @@
 
 @media (min-width: 1024px) {
     .layout {
-        grid-template-columns: 250px 1fr;
+        grid-template-columns: var(--sidebar-width) 1fr;
         grid-template-areas: "sidebar main";
-    }
-}
-
-
-/* ================ HEADER (base compartida) ================ */
-.header, .admin-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    width: 100%;
-}
-
-.header .container,
-.admin-header .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--espacio-sm);
-    padding-top: var(--espacio-md);
-    padding-bottom: var(--espacio-md);
-}
-
-@media (min-width: 1024px) {
-    .header .container,
-    .admin-header .container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-}
-
-
-/* ================ FOOTER (base compartida) ================ */
-.footer, .admin-footer {
-    width: 100%;
-    font-size: var(--text-xs);
-    color: var(--color-blanco);
-    background-color: var(--color-texto);
-    text-align: center;
-}
-
-.footer .container,
-.admin-footer .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--espacio-sm);
-    padding-top: var(--espacio-lg);
-    padding-bottom: var(--espacio-elg);
-}
-
-@media (min-width: 1024px) {
-    .footer .container,
-    .admin-footer .container {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
     }
 }
