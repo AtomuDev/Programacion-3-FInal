@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Food Store - Login">
     <meta name="author" content="Abel Tomás">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/login.css">
-    <title>Login Food Store</title>
+    <link rel="stylesheet" href="../../../styles/base.css">
+    <link rel="stylesheet" href="./login.css">
+    <title>Login - Food Store</title>
 </head>
 <body>
+    <!-- Main -->
     <main class="container">
-        <form class="login-form">
+        <form class="login-form" id="form">
             <h1>Food Store</h1>
             <h2>Iniciar Sesión</h2>
 
@@ -20,12 +22,16 @@
             <label for="password">Contraseña</label>
             <input type="password" id="password" name="password" required placeholder="Mínimo 8 caracteres">
 
-            <button type="button">Ingresar</button>
+            <button type="submit">Ingresar</button>
 
             <p>
-                ¿No tenes cuenta? <a href="" class="register-link">Registrate acá</a>
+                ¿No tenés cuenta? <a href="/src/pages/auth/registro/registro.html" class="register-link">Registrate acá</a>
             </p>
         </form>
     </main>
+
+    <!-- Script -->
+    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="./login.ts"></script>
 </body>
 </html>
