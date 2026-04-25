@@ -69,6 +69,10 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 
 /* ================ CONTAINER ================ */
 .container {
@@ -89,8 +93,10 @@
 .layout {
     display: grid;
     width: 100%;
+    gap: var(--espacio-md);
     max-width: var(--max-width);
     margin: 0 auto;
+    padding: 0 var(--espacio-md);
     grid-template-columns: 1fr;
     grid-template-areas:
         "sidebar"
@@ -100,6 +106,7 @@
 
 @media (min-width: 1024px) {
     .layout {
+        padding: 0 var(--espacio-elg);
         grid-template-columns: var(--sidebar-width) 1fr;
         grid-template-areas: "sidebar main";
     }
