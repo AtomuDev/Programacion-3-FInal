@@ -1,5 +1,5 @@
 import { PRODUCTS, getCategories } from "../../../data/data";
-import type { Product } from "../../../types/product";
+import type { CartItem, Product } from "../../../types/product";
 import type { ICategory } from "../../../types/category";
 import type { IUser } from "../../../types/IUser";
 import { logout } from "../../../utils/auth";
@@ -19,12 +19,12 @@ const setupNavbar = (): void => {
     const user: IUser | null = raw ? JSON.parse(raw) : null;
 
     const linkAdmin = document.getElementById("linkAdmin") as HTMLAnchorElement;
-    if (!user || user.role !== "admin") {
-        linkAdmin.style.display = "none";
+    if (user && user.role === "admin") {
+        linkAdmin.style.display = "";
     }
 
     const carrito = JSON.parse(localStorage.getItem("carrito") ?? "[]");
-    const total = carrito.reduce((acc: number, item: any) => acc + item.quantity, 0);
+    const total = carrito.reduce((acc: number, item: CartItem) => acc + item.quantity, 0);
     const linkCarrito = document.getElementById("linkCarrito") as HTMLAnchorElement;
     if (total > 0) {
         linkCarrito.innerHTML = `Carrito <span class="carrito-badge">${total}</span>`;
@@ -111,7 +111,7 @@ const agregarAlCarrito = (id: number, btn: HTMLButtonElement): void => {
     if (!producto) return;
 
     const carrito = JSON.parse(localStorage.getItem("carrito") ?? "[]");
-    const existente = carrito.find((item: any) => item.product.id === id);
+    const existente = carrito.find((item: CartItem) => item.product.id === id);
 
     if (existente) {
         existente.quantity += 1;
@@ -129,7 +129,7 @@ const agregarAlCarrito = (id: number, btn: HTMLButtonElement): void => {
     }, 1500);
 
     // Actualizar badge
-    const nuevoTotal = JSON.parse(localStorage.getItem("carrito") ?? "[]").reduce((acc: number, item: any) => acc + item.quantity, 0);
+    const nuevoTotal = JSON.parse(localStorage.getItem("carrito") ?? "[]").reduce((acc: number, item: CartItem) => acc + item.quantity, 0);
     const linkCarrito = document.getElementById("linkCarrito") as HTMLAnchorElement;
     linkCarrito.innerHTML = `Carrito <span class="carrito-badge">${nuevoTotal}</span>`;
 };

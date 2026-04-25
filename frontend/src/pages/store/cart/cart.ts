@@ -187,8 +187,8 @@ const setupNavbar = (): void => {
     const user: IUser | null = raw ? JSON.parse(raw) : null;
 
     const linkAdmin = document.getElementById("linkAdmin") as HTMLAnchorElement;
-    if (!user || user.role !== "admin") {
-        linkAdmin.style.display = "none";
+    if (user && user.role === "admin") {
+        linkAdmin.style.display = "";
     }
 };
 
