@@ -16,7 +16,7 @@
     box-shadow: var(--sombra-card);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .admin-sidebar {
         position: sticky;
         top: var(--header-height);
@@ -31,6 +31,7 @@
     padding-bottom: var(--espacio-sm);
     border-bottom: 2px solid var(--color-primario);
     font-size: var(--text-sm);
+    font-weight: var(--font-weight-semibold);
     color: var(--color-texto-suave);
 }
 
@@ -109,6 +110,7 @@
 .admin-section__title {
     font-family: var(--font-titulo);
     font-size: var(--text-lg);
+    font-weight: var(--font-weight-semibold);
     color: var(--color-texto);
 }
 
