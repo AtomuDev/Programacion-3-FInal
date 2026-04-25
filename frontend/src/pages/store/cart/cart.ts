@@ -1,4 +1,7 @@
 import type { CartItem } from "../../../types/product.ts";
+import type { IUser } from "../../../types/IUser.ts";
+import { getUser } from "../../../utils/localStorage";
+import { logout } from "../../../utils/auth";
 
 // Referencias al DOM
 const contenedorCarrito = document.getElementById("contenedor-carrito") as HTMLElement;
@@ -46,6 +49,14 @@ const stockTexto = (stock: number, quantity: number): string => {
     return `Stock disponible: ${restante}`;
 };
 
+// Actualizar badge del navbar
+const actualizarBadgeNavbar = (): void => {
+    const carrito = obtenerCarrito();
+    const total = carrito.reduce((acc, item) => acc + item.quantity, 0);
+    const linkCarrito = document.getElementById("linkCarrito") as HTMLAnchorElement;
+    linkCarrito.innerHTML = total > 0 ? `Carrito <span class="carrito-badge">${total}</span>` : "Carrito";
+};
+
 // Actualizar panel de resumen
 const actualizarResumen = (carrito: CartItem[]): void => {
     const subtotal = calcularSubtotal(carrito);
@@ -71,6 +82,7 @@ const renderCarrito = (): void => {
         carritoVacio.style.display = "block";
         mainBody.classList.add("main__body--vacio");
         actualizarResumen([]);
+        actualizarBadgeNavbar();
         return;
     }
 
@@ -106,6 +118,7 @@ const renderCarrito = (): void => {
     });
 
     actualizarResumen(carrito);
+    actualizarBadgeNavbar();
 
     contenedorCarrito.querySelectorAll(".btn-sumar").forEach(btn => {
         btn.addEventListener("click", () => {
@@ -135,9 +148,7 @@ const cambiarCantidad = (id: number, delta: number): void => {
     const item = carrito.find(i => i.product.id === id);
     if (!item) return;
 
-    if (delta > 0 && item.quantity >= item.product.stock) {
-        return;
-    }
+    if (delta > 0 && item.quantity >= item.product.stock) return;
 
     item.quantity += delta;
 
@@ -165,10 +176,25 @@ btnVaciar.addEventListener("click", () => {
     }
 });
 
-// Finalizar compra (preparado para lógica futura)
+// Finalizar compra
 btnFinalizar.addEventListener("click", () => {
     console.log("Finalizar compra");
 });
 
+// Setup navbar
+const setupNavbar = (): void => {
+    const raw = getUser();
+    const user: IUser | null = raw ? JSON.parse(raw) : null;
+
+    const linkAdmin = document.getElementById("linkAdmin") as HTMLAnchorElement;
+    if (!user || user.role !== "admin") {
+        linkAdmin.style.display = "none";
+    }
+};
+
+const buttonLogout = document.getElementById("logoutButton") as HTMLButtonElement;
+buttonLogout?.addEventListener("click", () => logout());
+
 // Init
+setupNavbar();
 renderCarrito();

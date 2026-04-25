@@ -127,6 +127,11 @@ const agregarAlCarrito = (id: number, btn: HTMLButtonElement): void => {
         btn.textContent = "Agregar al Carrito";
         btn.disabled = false;
     }, 1500);
+
+    // Actualizar badge
+    const nuevoTotal = JSON.parse(localStorage.getItem("carrito") ?? "[]").reduce((acc: number, item: any) => acc + item.quantity, 0);
+    const linkCarrito = document.getElementById("linkCarrito") as HTMLAnchorElement;
+    linkCarrito.innerHTML = `Carrito <span class="carrito-badge">${nuevoTotal}</span>`;
 };
 
 // Buscador

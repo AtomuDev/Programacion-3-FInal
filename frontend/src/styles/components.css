@@ -73,6 +73,23 @@
     }
 }
 
+.carrito-badge {
+    position: relative;
+    top: -2px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 var(--espacio-xs);
+    border-radius: 9px;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-semibold);
+    vertical-align: middle;
+}
+
 
 /* ================ HEADER (admin) ================ */
 .admin-header {

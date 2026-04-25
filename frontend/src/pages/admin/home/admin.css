@@ -21,7 +21,7 @@
         position: sticky;
         top: var(--header-height);
         align-self: start;
-        margin: var(--espacio-md);
+        margin-top: var(--espacio-md);
         border-radius: var(--radio-sm);
     }
 }
@@ -75,13 +75,13 @@
     gap: var(--espacio-md);
     overflow-x: hidden;
     margin-top: var(--espacio-md);
-    padding: 0 var(--espacio-md) var(--espacio-md);
+    padding: 0 0 var(--espacio-md);
     background-color: var(--color-fondo);
 }
 
 @media (min-width: 768px) {
     .admin-main {
-        margin: var(--espacio-md) var(--espacio-sm);
+        margin: var(--espacio-md) 0;
     }
 }
 
