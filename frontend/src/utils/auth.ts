@@ -32,5 +32,6 @@ export const checkAuthUser = (rolRequerido: Rol) => {
 
 export const logout = () => {
     removeUser();
+    localStorage.removeItem("carrito");
     navigate("/src/pages/auth/login/login.html");
 };
