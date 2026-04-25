@@ -40,8 +40,10 @@ La aplicación estará disponible en `http://localhost:5173`.
 
 | Rol   | Email                  | Contraseña |
 |-------|------------------------|------------|
-| Admin | "admin@foodstore .com    | admin123   |
+| Admin | "admin@foodstore.com    | admin123   |
 | Cliente | Registrarse desde la pantalla de registro | — |
+
+> Se recomienda ingresar como **admin** para acceder a todas las secciones de la aplicación.
 
 <br>
 
