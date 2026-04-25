@@ -11,7 +11,7 @@ const summaryTotal = document.getElementById("summary-total") as HTMLElement;
 const orderSummary = document.getElementById("order-summary") as HTMLElement;
 const mainBody = document.querySelector(".main__body") as HTMLElement;
 
-// Costo de envío fijo (ajustar según lógica real)
+// Costo de envío fijo
 const COSTO_ENVIO: number = 5000;
 
 // Obtener carrito desde localStorage
@@ -83,17 +83,20 @@ const renderCarrito = (): void => {
         const div = document.createElement("div");
         div.classList.add("cart-item");
         div.innerHTML = `
-            <div class="cart-item__info">
-                <h3>${item.product.nombre}</h3>
-                <p>Precio: $${item.product.precio.toLocaleString("es-AR")}</p>
-                <p>Subtotal: $${(item.product.precio * item.quantity).toLocaleString("es-AR")}</p>
-                <p class="cart-item__stock ${stockClass(item.product.stock, item.quantity)}">
-                    ${stockTexto(item.product.stock, item.quantity)}
-                </p>
+            <div class="cart-item__top">
+                <img src="../../../assets/images/${item.product.imagen}" alt="${item.product.nombre}" class="cart-item__img">
+                <div class="cart-item__info">
+                    <h3>${item.product.nombre}</h3>
+                    <p>Precio: $${item.product.precio.toLocaleString("es-AR")}</p>
+                    <p>Subtotal: $${(item.product.precio * item.quantity).toLocaleString("es-AR")}</p>
+                    <p class="cart-item__stock ${stockClass(item.product.stock, item.quantity)}">
+                        ${stockTexto(item.product.stock, item.quantity)}
+                    </p>
+                </div>
             </div>
             <div class="cart-item__actions">
                 <div class="quantity-control">
-                    <button type="button" data-id="${item.product.id}" class="btn-restar">−</button>
+                    <button type="button" data-id="${item.product.id}" class="btn-restar" ${item.quantity <= 1 ? "disabled" : ""}>−</button>
                     <span class="quantity-control__value">${item.quantity}</span>
                     <button type="button" data-id="${item.product.id}" class="btn-sumar" ${restante <= 0 ? "disabled" : ""}>+</button>
                 </div>

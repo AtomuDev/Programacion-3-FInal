@@ -16,7 +16,7 @@ body {
     box-shadow: var(--sombra-card);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .categories {
         position: sticky;
         top: var(--header-height);
@@ -31,6 +31,7 @@ body {
     padding-bottom: var(--espacio-sm);
     border-bottom: 2px solid var(--color-primario);
     font-size: var(--text-sm);
+    font-weight: var(--font-weight-semibold);
     color: var(--color-texto-suave);
 }
 
@@ -78,33 +79,30 @@ body {
     }
 }
 
-.main__title {
+.main__section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-md);
+    padding: var(--espacio-md);
+    border-radius: var(--radio-md);
+    background-color: var(--color-blanco);
+    box-shadow: var(--sombra-card);
+}
+
+.main__section-header {
     padding-bottom: var(--espacio-sm);
     border-bottom: 2px solid var(--color-primario);
+}
+
+.main__title {
     font-family: var(--font-titulo);
     font-size: var(--text-lg);
+    font-weight: var(--font-weight-semibold);
     color: var(--color-texto);
 }
 
-.main__products {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--espacio-md);
-    width: 100%;
-}
 
-@media (min-width: 600px) {
-    .main__products {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (min-width: 1280px) {
-    .main__products {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
+/* ================ SEARCH BAR ================ */
 .main__search-bar {
     display: flex;
     width: 100%;
@@ -128,9 +126,30 @@ body {
     border-color: var(--color-primario);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .main__search-bar {
         width: 75%;
+    }
+}
+
+
+/* ================ PRODUCT GRID ================ */
+.main__products {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacio-md);
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .main__products {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1280px) {
+    .main__products {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
@@ -203,6 +222,7 @@ body {
 
 .product-card__precio {
     font-size: var(--text-lg);
+    font-weight: var(--font-weight-semibold);
     color: var(--color-primario);
 }
 

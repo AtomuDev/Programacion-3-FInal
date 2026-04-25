@@ -27,39 +27,44 @@
 
     <!-- Contenido principal -->
     <main class="main">
-        <div class="main__header">
-            <h2 class="main__title">Mi Carrito</h2>
-        </div>
 
-        <div class="main__body">
-
-            <!-- Lista de productos -->
-            <div class="cart-list">
-                <div id="contenedor-carrito"></div>
-                <p id="carrito-vacio" style="display:none">No hay productos en el carrito.</p>
+        <!-- Sección carrito -->
+        <section class="main__section">
+            <div class="main__section-header">
+                <h2 class="main__title">Mi Carrito</h2>
             </div>
 
-            <!-- Resumen del pedido -->
-            <aside class="order-summary" id="order-summary">
-                <h3 class="order-summary__title">Resumen del pedido</h3>
-                <div class="order-summary__row">
-                    <span>Subtotal</span>
-                    <span id="summary-subtotal">$0</span>
-                </div>
-                <div class="order-summary__row">
-                    <span>Envío</span>
-                    <span id="summary-envio">$0</span>
-                </div>
-                <div class="order-summary__divider"></div>
-                <div class="order-summary__row order-summary__row--total">
-                    <span>Total</span>
-                    <span id="summary-total">$0</span>
-                </div>
-                <button type="button" id="btn-vaciar" class="btn-vaciar">Vaciar carrito</button>
-                <button type="button" class="btn-finalizar" id="btn-finalizar">Finalizar compra</button>
-            </aside>
+            <div class="main__body">
 
-        </div>
+                <!-- Lista de productos -->
+                <div class="cart-list">
+                    <div id="contenedor-carrito"></div>
+                    <p id="carrito-vacio" style="display:none">No hay productos en el carrito.</p>
+                </div>
+
+                <!-- Resumen del pedido -->
+                <aside class="order-summary" id="order-summary">
+                    <h3 class="order-summary__title">Resumen del pedido</h3>
+                    <div class="order-summary__row">
+                        <span>Subtotal</span>
+                        <span id="summary-subtotal">$0</span>
+                    </div>
+                    <div class="order-summary__row">
+                        <span>Envío</span>
+                        <span id="summary-envio">$0</span>
+                    </div>
+                    <div class="order-summary__divider"></div>
+                    <div class="order-summary__row order-summary__row--total">
+                        <span>Total</span>
+                        <span id="summary-total">$0</span>
+                    </div>
+                    <button type="button" id="btn-vaciar" class="btn-vaciar">Vaciar carrito</button>
+                    <button type="button" class="btn-finalizar" id="btn-finalizar">Finalizar compra</button>
+                </aside>
+
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
