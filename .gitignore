@@ -24,3 +24,15 @@ dist-ssr
 *.sw?
 
 .vscode/
+
+# ---- Backend (Java / Gradle / JPA) ----
+backend/.gradle/
+backend/build/
+backend/out/
+backend/*.iml
+backend/.idea/
+
+# Base de datos H2 en archivo
+backend/data/
+*.mv.db
+*.trace.db
