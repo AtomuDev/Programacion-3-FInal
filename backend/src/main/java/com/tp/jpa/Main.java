@@ -387,7 +387,7 @@ public class Main {
     }
 
     static void bajaProducto() {
-        System.out.println("\n---- Baja producto ----");
+        System.out.println("\n---- Baja lógica de producto ----");
 
         if (productoRepo.listarActivosConCategoria().isEmpty()) {
             System.out.println("\n-> No hay productos activos.");
