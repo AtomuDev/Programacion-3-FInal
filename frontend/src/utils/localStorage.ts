@@ -1,41 +1,48 @@
-import type { IUser } from "../types/IUser";
+import type { ISessionUser, IUser } from "../types/IUser";
 
-// Guardar usuario en localStorage
-export const saveUser = (user: IUser) => {
+const SESSION_KEY = "userData";
+const USERS_KEY = "localUsers";
+
+// Guardar usuario logueado en localStorage (sin password)
+export const saveUser = (user: ISessionUser): void => {
     try {
-        const parseUser = JSON.stringify(user);
-        localStorage.setItem("userData", parseUser);
+        localStorage.setItem(SESSION_KEY, JSON.stringify(user));
     } catch (error) {
         console.error("Error al guardar usuario:", error);
     }
 };
 
-// Obtener usuario actual desde localStorage
-export const getUser = () => {
-    return localStorage.getItem("userData");
+// Obtener el usuario en sesión actual (ya parseado), o null si no hay sesión
+export const getSessionUser = (): ISessionUser | null => {
+    const raw = localStorage.getItem(SESSION_KEY);
+    return raw ? JSON.parse(raw) : null;
 };
 
 // Eliminar usuario del localStorage (logout)
-export const removeUser = () => {
-    localStorage.removeItem("userData");
+export const removeUser = (): void => {
+    localStorage.removeItem(SESSION_KEY);
 };
 
-// Obtener todos los usuarios registrados desde localStorage
-export const getUsers = (): IUser[] => {
+export const getLocalUsers = (): IUser[] => {
     try {
-        const usersRaw = localStorage.getItem("users");
-        return usersRaw ? JSON.parse(usersRaw) : [];
+        const raw = localStorage.getItem(USERS_KEY);
+        return raw ? JSON.parse(raw) : [];
     } catch (error) {
-        console.error("Error al leer usuarios:", error);
+        console.error("Error al leer usuarios locales:", error);
         return [];
     }
 };
 
-// agregar un nuevo usuario al localStorage
-export const saveUsers = (users: IUser[]) => {
+export const saveLocalUsers = (users: IUser[]): void => {
     try {
-        localStorage.setItem("users", JSON.stringify(users));
+        localStorage.setItem(USERS_KEY, JSON.stringify(users));
     } catch (error) {
-        console.error("Error al guardar usuarios:", error);
+        console.error("Error al guardar usuarios locales:", error);
     }
+};
+
+export const addLocalUser = (user: IUser): void => {
+    const usuarios = getLocalUsers();
+    usuarios.push(user);
+    saveLocalUsers(usuarios);
 };

@@ -21,8 +21,9 @@
             </a>
             <nav class="header__nav">
                 <a href="/src/pages/store/home/home.html">Catálogo</a>
+                <a href="/src/pages/client/orders/orders.html" id="linkMisPedidos">Mis Pedidos</a>
                 <a href="/src/pages/store/cart/cart.html" id="linkCarrito">Carrito</a>
-                <a href="/src/pages/admin/home/admin.html" id="linkAdmin" style="display:none">Administración</a>
+                <a href="/src/pages/admin/adminHome/adminHome.html" id="linkAdmin" style="display:none">Administración</a>
                 <button type="button" id="logoutButton">Salir</button>
             </nav>
         </div>
@@ -40,9 +41,16 @@
         <!-- Contenido principal -->
         <main class="main">
 
-            <!-- Buscador -->
+            <!-- Buscador y orden -->
             <div class="main__search-bar">
                 <input type="text" id="buscador" placeholder="Buscar productos...">
+                <select id="orden">
+                    <option value="default">Ordenar por...</option>
+                    <option value="nombre-asc">Nombre A-Z</option>
+                    <option value="nombre-desc">Nombre Z-A</option>
+                    <option value="precio-asc">Precio: menor a mayor</option>
+                    <option value="precio-desc">Precio: mayor a menor</option>
+                </select>
             </div>
 
             <!-- Grilla de productos -->
@@ -54,6 +62,13 @@
             </section>
 
         </main>
+    </div>
+
+    <div class="modal-overlay" id="modal-producto" style="display:none">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-producto-title">
+            <button type="button" class="modal__close" id="modal-producto-close">&times;</button>
+            <div id="modal-producto-content" class="modal__content"></div>
+        </div>
     </div>
 
     <!-- Pie de página -->

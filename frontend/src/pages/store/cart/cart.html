@@ -21,8 +21,9 @@
             </a>
             <nav class="header__nav">
                 <a href="/src/pages/store/home/home.html">Catálogo</a>
+                <a href="/src/pages/client/orders/orders.html">Mis Pedidos</a>
                 <a href="/src/pages/store/cart/cart.html" id="linkCarrito">Carrito</a>
-                <a href="/src/pages/admin/home/admin.html" id="linkAdmin" style="display:none">Administración</a>
+                <a href="/src/pages/admin/adminHome/adminHome.html" id="linkAdmin" style="display:none">Administración</a>
                 <button type="button" id="logoutButton">Salir</button>
             </nav>
         </div>
@@ -42,7 +43,7 @@
                 <!-- Lista de productos -->
                 <div class="cart-list">
                     <div id="contenedor-carrito"></div>
-                    <p id="carrito-vacio" style="display:none">No hay productos en el carrito.</p>
+                    <div id="carrito-vacio" class="cart-empty" style="display:none"></div>
                 </div>
 
                 <!-- Resumen del pedido -->
@@ -69,6 +70,50 @@
         </section>
 
     </main>
+
+    <!-- Modal de checkout -->
+    <div class="modal-overlay" id="modal-checkout" style="display:none">
+        <div class="modal">
+            <button type="button" class="modal__close" id="modal-close">&times;</button>
+            <div id="modal-body">
+                <h3 class="modal__title">Completar pedido</h3>
+
+                <div class="modal__group">
+                    <label for="checkout-telefono">Teléfono</label>
+                    <input type="tel" id="checkout-telefono" inputmode="tel" maxlength="20" placeholder="Ej: +54 9 11 1234-5678">
+                </div>
+
+                <div class="modal__group">
+                    <label for="checkout-direccion">Dirección de entrega</label>
+                    <input type="text" id="checkout-direccion" maxlength="50" placeholder="Calle, número, piso, depto">
+                </div>
+
+                <div class="modal__group">
+                    <label for="checkout-pago">Método de pago</label>
+                    <select id="checkout-pago">
+                        <option value="" selected disabled>Seleccione un método</option>
+                        <option value="EFECTIVO">Efectivo</option>
+                        <option value="TARJETA">Tarjeta</option>
+                        <option value="TRANSFERENCIA">Transferencia</option>
+                    </select>
+                </div>
+
+                <div class="modal__group">
+                    <label for="checkout-notas">Notas adicionales (opcional)</label>
+                    <textarea id="checkout-notas" maxlength="300" placeholder="Instrucciones especiales, timbre, etc."></textarea>
+                </div>
+
+                <p class="modal__error" id="checkout-error"></p>
+
+                <div class="modal__total">
+                    <span>Total a pagar:</span>
+                    <span id="checkout-total">$0</span>
+                </div>
+
+                <button type="button" class="btn-finalizar" id="btn-confirmar-pedido">Confirmar Pedido</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">

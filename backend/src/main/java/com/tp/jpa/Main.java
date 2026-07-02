@@ -808,22 +808,22 @@ public class Main {
             em.getTransaction().commit();
 
             // Mostrar resumen del pedido creado
-            System.out.println("\n==== Pedido creado =======================================");
+            System.out.println("\n==== Pedido creado ===========================================================");
             System.out.println("- ID:          " + pedido.getId());
             System.out.println("- Fecha:       " + pedido.getFecha());
             System.out.println("- Usuario:     " + usuarioManaged.getNombre() + " " + usuarioManaged.getApellido());
             System.out.println("- Forma pago:  " + pedido.getFormaPago());
             System.out.println("- Estado:      " + pedido.getEstado());
             System.out.println("\n---- Detalle: ----");
-            System.out.printf("  %-30s %-8s %-15s%n", "Producto", "Cant.", "Subtotal");
+            System.out.printf("  %-30s %-8s %-16s %-15s%n", "Producto", "Cant.", "P. Unit.", "Subtotal");
             for (DetallePedido d : pedido.getDetalles()) {
                 String nombreProd = d.getProducto().getNombre();
-                System.out.printf("  - %-28s %-8d $%-15.2f%n",
+                System.out.printf("  - %-28s %-8d $%-15.2f $%-15.2f%n",
                         nombreProd.length() > 23 ? nombreProd.substring(0, 23) + "..." : nombreProd,
-                        d.getCantidad(), d.getSubtotal());
+                        d.getCantidad(), d.getProducto().getPrecio(), d.getSubtotal());
             }
             System.out.printf("%nTotal: $%.2f%n", pedido.getTotal());
-            System.out.println("==========================================================");
+            System.out.println("==============================================================================");
 
         } catch (Exception e) {
             if (em.getTransaction().isActive()) em.getTransaction().rollback();

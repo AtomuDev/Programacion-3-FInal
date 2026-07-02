@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Food Store - Gestión de Productos">
+    <meta name="author" content="Abel Tomás">
+    <link rel="stylesheet" href="../../../styles/base.css">
+    <link rel="stylesheet" href="../../../styles/components.css">
+    <link rel="stylesheet" href="../../../styles/admin-shared.css">
+    <link rel="stylesheet" href="../adminHome/adminHome.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <title>Productos - Food Store Admin</title>
+</head>
+<body class="admin-body">
+
+    <!-- Header -->
+    <header class="admin-header">
+        <div class="container">
+            <a href="/src/pages/admin/adminHome/adminHome.html" class="admin-header__title-link">
+                <h1 class="admin-header__title">Food Store <span>Admin</span></h1>
+            </a>
+            <nav class="admin-header__nav">
+                <a href="/src/pages/store/home/home.html">Ver Tienda</a>
+                <button type="button" id="logoutButton">Salir</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="layout">
+
+        <aside class="admin-sidebar">
+            <p class="admin-sidebar__label">Administración</p>
+            <nav class="admin-sidebar__nav">
+                <ul class="admin-sidebar__list"></ul>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+
+            <section class="admin-section">
+                <div class="admin-section__header">
+                    <h2 class="admin-section__title">Gestión de Productos</h2>
+                    <button type="button" class="btn btn--primary" id="btn-nuevo-producto">+ Nuevo Producto</button>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Imagen</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Categoría</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Stock</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-productos"></tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Modal alta/edición -->
+    <div class="modal-overlay" id="modal-producto" style="display:none">
+        <div class="modal">
+            <button type="button" class="modal__close" id="modal-close">&times;</button>
+            <h3 class="modal__title" id="modal-titulo">Nuevo Producto</h3>
+
+            <form id="form-producto">
+                <input type="hidden" id="producto-id">
+
+                <div class="admin-form__group" style="margin-bottom: var(--espacio-md);">
+                    <label class="admin-form__label" for="producto-nombre">Nombre</label>
+                    <input class="admin-form__input" type="text" id="producto-nombre" maxlength="60" placeholder="Ej: Lomito Completo" required>
+                </div>
+
+                <div class="admin-form__row" style="margin-bottom: var(--espacio-md);">
+                    <div class="admin-form__group">
+                        <label class="admin-form__label" for="producto-precio">Precio</label>
+                        <input class="admin-form__input" type="number" id="producto-precio" min="0" max="999999" step="1" placeholder="Ej: 8000" required>
+                    </div>
+                    <div class="admin-form__group">
+                        <label class="admin-form__label" for="producto-stock">Stock</label>
+                        <input class="admin-form__input" type="number" id="producto-stock" min="0" max="999" step="1" placeholder="Ej: 10" required>
+                    </div>
+                </div>
+
+                <div class="admin-form__group" style="margin-bottom: var(--espacio-md);">
+                    <label class="admin-form__label" for="producto-categoria">Categoría</label>
+                    <select class="admin-form__select" id="producto-categoria" required></select>
+                </div>
+
+                <div class="admin-form__group" style="margin-bottom: var(--espacio-md);">
+                    <label class="admin-form__label" for="producto-descripcion">Descripción</label>
+                    <textarea class="admin-form__textarea" id="producto-descripcion" maxlength="200" placeholder="Ingredientes, detalle..."></textarea>
+                </div>
+
+                <div class="admin-form__group" style="margin-bottom: var(--espacio-md);">
+                    <label class="admin-form__label" for="producto-imagen">URL de imagen</label>
+                    <input class="admin-form__input" type="url" id="producto-imagen" maxlength="500" placeholder="https://ejemplo.com/imagen.jpg">
+                </div>
+
+                <div class="admin-form__group" style="margin-bottom: var(--espacio-md); flex-direction: row; align-items: center; gap: var(--espacio-sm);">
+                    <input type="checkbox" id="producto-disponible" checked style="width: auto;">
+                    <label class="admin-form__label" for="producto-disponible" style="margin:0;">Producto disponible</label>
+                </div>
+
+                <p class="modal__error" id="producto-error"></p>
+
+                <div class="modal__actions">
+                    <button type="submit" class="btn btn--primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="admin-footer">
+        <div class="container">
+            <p>Panel de Administración &mdash; Food Store v1.0</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="./products.ts"></script>
+</body>
+</html>

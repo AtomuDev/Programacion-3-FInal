@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Food Store - Detalle de Producto">
+    <meta name="author" content="Abel Tomás">
+    <link rel="stylesheet" href="../../../styles/base.css">
+    <link rel="stylesheet" href="../../../styles/components.css">
+    <link rel="stylesheet" href="./productDetail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <title>Detalle de Producto - Food Store</title>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="/src/pages/store/home/home.html" class="header__title-link">
+                <h1 class="header__title">Food Store</h1>
+            </a>
+            <nav class="header__nav">
+                <a href="/src/pages/store/home/home.html">Catálogo</a>
+                <a href="/src/pages/client/orders/orders.html">Mis Pedidos</a>
+                <a href="/src/pages/store/cart/cart.html" id="linkCarrito">Carrito</a>
+                <a href="/src/pages/admin/adminHome/adminHome.html" id="linkAdmin" style="display:none">Administración</a>
+                <button type="button" id="logoutButton">Salir</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="container detail">
+        <div id="detail-content" class="detail__content">
+            <p>Cargando producto...</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Food Store. Todos los derechos reservados.</p>
+            <address>
+                Contacto: <a href="mailto:info@foodstore.com">info@foodstore.com</a>
+            </address>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="./productDetail.ts"></script>
+</body>
+</html>

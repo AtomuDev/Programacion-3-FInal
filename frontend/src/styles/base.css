@@ -71,8 +71,17 @@
 
 html {
     overflow-y: scroll;
+    height: 100%;
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-base);
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
 
 /* ================ CONTAINER ================ */
 .container {
