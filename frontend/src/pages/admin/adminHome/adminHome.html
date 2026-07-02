@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Food Store - Panel de Administración">
+    <meta name="author" content="Abel Tomás">
+    <link rel="stylesheet" href="../../../styles/base.css">
+    <link rel="stylesheet" href="../../../styles/components.css">
+    <link rel="stylesheet" href="../../../styles/admin-shared.css">
+    <link rel="stylesheet" href="./adminHome.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <title>Panel de Administración - Food Store</title>
+</head>
+<body class="admin-body">
+
+    <!-- Header -->
+    <header class="admin-header">
+        <div class="container">
+            <a href="/src/pages/admin/adminHome/adminHome.html" class="admin-header__title-link">
+                <h1 class="admin-header__title">Food Store <span>Admin</span></h1>
+            </a>
+            <nav class="admin-header__nav">
+                <a href="/src/pages/store/home/home.html">Ver Tienda</a>
+                <button type="button" id="logoutButton">Salir</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Layout: sidebar + main -->
+    <div class="layout">
+
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <p class="admin-sidebar__label">Administración</p>
+            <nav class="admin-sidebar__nav">
+                <ul class="admin-sidebar__list"></ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="admin-main">
+
+            <section class="admin-section">
+                <div class="admin-section__header">
+                    <h2 class="admin-section__title">Panel de Administración</h2>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card stat-card--categorias">
+                        <span class="stat-card__label">Categorías</span>
+                        <span class="stat-card__value" id="stat-categorias">0</span>
+                    </div>
+                    <div class="stat-card stat-card--productos">
+                        <span class="stat-card__label">Productos</span>
+                        <span class="stat-card__value" id="stat-productos">0</span>
+                    </div>
+                    <div class="stat-card stat-card--pedidos">
+                        <span class="stat-card__label">Pedidos</span>
+                        <span class="stat-card__value" id="stat-pedidos">0</span>
+                    </div>
+                    <div class="stat-card stat-card--disponibles">
+                        <span class="stat-card__label">Disponibles</span>
+                        <span class="stat-card__value" id="stat-disponibles">0</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="admin-section">
+                <div class="admin-section__header">
+                    <h2 class="admin-section__title">Resumen Rápido</h2>
+                </div>
+                <div class="resumen-rapido" id="resumen-rapido">
+                    <p>Cargando estadísticas...</p>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="admin-footer">
+        <div class="container">
+            <p>Panel de Administración &mdash; Food Store v1.0</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="./adminHome.ts"></script>
+</body>
+</html>

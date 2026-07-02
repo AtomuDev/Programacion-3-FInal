@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Food Store - Gestión de Pedidos">
+    <meta name="author" content="Abel Tomás">
+    <link rel="stylesheet" href="../../../styles/base.css">
+    <link rel="stylesheet" href="../../../styles/components.css">
+    <link rel="stylesheet" href="../../../styles/admin-shared.css">
+    <link rel="stylesheet" href="../adminHome/adminHome.css">
+    <link rel="stylesheet" href="./orders.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <title>Pedidos - Food Store Admin</title>
+</head>
+<body class="admin-body">
+
+    <!-- Header -->
+    <header class="admin-header">
+        <div class="container">
+            <a href="/src/pages/admin/adminHome/adminHome.html" class="admin-header__title-link">
+                <h1 class="admin-header__title">Food Store <span>Admin</span></h1>
+            </a>
+            <nav class="admin-header__nav">
+                <a href="/src/pages/store/home/home.html">Ver Tienda</a>
+                <button type="button" id="logoutButton">Salir</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="layout">
+
+        <aside class="admin-sidebar">
+            <p class="admin-sidebar__label">Administración</p>
+            <nav class="admin-sidebar__nav">
+                <ul class="admin-sidebar__list"></ul>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+
+            <section class="admin-section">
+                <div class="admin-section__header">
+                    <h2 class="admin-section__title">Gestión de Pedidos</h2>
+                    <div class="filtro-bar">
+                        <select id="filtro-estado">
+                            <option value="todos">Todos los pedidos</option>
+                            <option value="PENDIENTE">Pendiente</option>
+                            <option value="CONFIRMADO">Confirmado</option>
+                            <option value="TERMINADO">Terminado</option>
+                            <option value="CANCELADO">Cancelado</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="orders__list" id="lista-pedidos" style="display:flex; flex-direction:column; gap: var(--espacio-md);"></div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Modal detalle + cambio de estado -->
+    <div class="modal-overlay" id="modal-detalle" style="display:none">
+        <div class="modal">
+            <button type="button" class="modal__close" id="modal-close">&times;</button>
+            <div id="modal-detalle-body"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="admin-footer">
+        <div class="container">
+            <p>Panel de Administración &mdash; Food Store v1.0</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="./orders.ts"></script>
+</body>
+</html>

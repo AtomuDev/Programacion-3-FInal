@@ -1,0 +1,147 @@
+/* ================ STAT CARDS (Dashboard) ================ */
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacio-md);
+}
+
+@media (min-width: 640px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-sm);
+    padding: var(--espacio-md);
+    border-radius: var(--radio-md);
+    color: var(--color-blanco);
+}
+
+.stat-card__label {
+    font-size: var(--text-sm);
+    opacity: 0.9;
+}
+
+.stat-card__value {
+    font-family: var(--font-titulo);
+    font-size: var(--text-xxl);
+    font-weight: var(--font-weight-bold);
+}
+
+.stat-card--categorias { background-color: #7c5cff; }
+.stat-card--productos { background-color: #ff5c93; }
+.stat-card--pedidos { background-color: #2bb6c4; }
+.stat-card--disponibles { background-color: #2bc48c; }
+
+.resumen-rapido {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-sm);
+}
+
+.resumen-rapido__row {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--text-sm);
+    padding: var(--espacio-xs) 0;
+    border-bottom: 1px solid var(--color-fondo);
+}
+
+.resumen-rapido__row:last-child {
+    border-bottom: none;
+}
+
+
+/* ================ BADGES DE ESTADO (compartido) ================ */
+.badge {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 12px;
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-semibold);
+}
+
+.badge--pendiente { background-color: #fef0d9; color: #b76e00; }
+.badge--confirmado { background-color: #d6e9fb; color: #1457a8; }
+.badge--terminado { background-color: #d2f4e3; color: var(--color-verde); }
+.badge--cancelado { background-color: #fde3e0; color: var(--color-peligro); }
+.badge--activo { background-color: #d2f4e3; color: var(--color-verde); }
+.badge--inactivo { background-color: #fde3e0; color: var(--color-peligro); }
+
+
+/* ================ MODAL (compartido en admin) ================ */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: var(--espacio-md);
+}
+
+.modal {
+    width: 100%;
+    max-width: 480px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background-color: var(--color-blanco);
+    border-radius: var(--radio-md);
+    padding: var(--espacio-lg);
+    position: relative;
+}
+
+.modal__close {
+    position: absolute;
+    top: var(--espacio-md);
+    right: var(--espacio-md);
+    border: none;
+    background: none;
+    font-size: var(--text-lg);
+    cursor: pointer;
+    color: var(--color-texto-suave);
+}
+
+.modal__title {
+    font-family: var(--font-titulo);
+    font-size: var(--text-lg);
+    margin-bottom: var(--espacio-md);
+}
+
+.modal__error {
+    color: var(--color-peligro);
+    font-size: var(--text-sm);
+    margin-bottom: var(--espacio-sm);
+    display: none;
+}
+
+.modal__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--espacio-sm);
+    margin-top: var(--espacio-md);
+}
+
+.filtro-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-sm);
+}
+
+.filtro-bar select {
+    padding: var(--espacio-sm) var(--espacio-md);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-sm);
+    font-family: var(--font-base);
+    background-color: var(--color-blanco);
+}
